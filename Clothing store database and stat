@@ -1,0 +1,24 @@
+--Create a clothing store database
+
+CREATE TABLE casual_clothes (id INTEGER PRIMARY KEY, name TEXT, color TEXT, size INTEGER, price INTEGER);
+
+INSERT INTO casual_clothes VALUES (8,'Coat', 'green', 8, 32);
+INSERT INTO casual_clothes VALUES (9,'Onesie', 'red', 8, 28);
+INSERT INTO casual_clothes VALUES (10,'Jacket', 'velvet', 8,22);
+INSERT INTO casual_clothes VALUES (1,'PJ set', 'beige', 8, 26);
+INSERT INTO casual_clothes VALUES (2,'Hoodie', 'brown', 6, 12);
+INSERT INTO casual_clothes VALUES (3,'Cardigan', 'yellow', 10, 40);
+INSERT INTO casual_clothes VALUES (4,'Sock', 'navy', 8, 5);
+INSERT INTO casual_clothes VALUES (5,'Bikini', 'beige', 8, 7);
+INSERT INTO casual_clothes VALUES (6,'Jogger', 'black', 8, 14);
+INSERT INTO casual_clothes VALUES (7,'Jump suit', 'grey', 8, 42);
+INSERT INTO casual_clothes VALUES (11,'T-shirt', 'wine', 8, 26);
+INSERT INTO casual_clothes VALUES (12,'Shirt', 'teal', 8, 8);
+INSERT INTO casual_clothes VALUES (13,'Blazer', 'emerald', 8, 26);
+INSERT INTO casual_clothes VALUES (14,'Cargo', 'pink', 8, 30);
+INSERT INTO casual_clothes VALUES (15,'Jeans', 'blue', 8, 24);
+
+--display the database ordered by price. 
+SELECT * FROM casual_clothes  
+WHERE price >= 12 
+ORDER BY price desc;
