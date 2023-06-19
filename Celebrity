@@ -1,0 +1,52 @@
+/* Create table about the people and what they do here */
+CREATE TABLE celebrity (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER);
+    
+INSERT INTO celebrity (fullname, age) VALUES ("Rita Wilson", "66");
+INSERT INTO celebrity (fullname, age) VALUES ("Tom hanks", "66");
+INSERT INTO celebrity (fullname, age) VALUES ("Will Smith", "54");
+INSERT INTO celebrity (fullname, age) VALUES ("Beyonce", "41");
+INSERT INTO celebrity (fullname, age) VALUES ("Pauletta pearson", "72");
+INSERT INTO celebrity (fullname, age) VALUES ("Jada Pickett Smith", "51");
+INSERT INTO celebrity (fullname, age) VALUES ("Denzel Washington", "68");
+INSERT INTO celebrity (fullname, age) VALUES ("Jay-z", "53");
+
+CREATE table known_for (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_id INTEGER,
+    movie_song TEXT);
+    
+INSERT INTO known_for (person_id,movie_song) VALUES (1, "Bossom Buddies");
+INSERT INTO known_for (person_id,movie_song ) VALUES (2, "Sleepless in seattle");
+INSERT INTO known_for (person_id,movie_song) VALUES (3, "Fresh prince of bel air");
+INSERT INTO known_for (person_id,movie_song) VALUES (3, "Aladdin");
+INSERT INTO known_for (person_id,movie_song ) VALUES (4, "Halo");
+INSERT INTO known_for (person_id,movie_song ) VALUES (4, "Deja-vu");
+INSERT INTO known_for (person_id,movie_song) VALUES (5, "Wilma");
+INSERT INTO known_for (person_id,movie_song) VALUES (6, "Fresh prince of bel air");
+INSERT INTO known_for (person_id,movie_song) VALUES (7, "Wilma");
+INSERT INTO known_for (person_id,movie_song) VALUES (7, "Malcom X");
+INSERT INTO known_for (person_id,movie_song) VALUES (8, "Deja-vu");
+INSERT INTO known_for (person_id,movie_song) VALUES (8, "Drunk in love");
+CREATE table Marriage_partner (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person1_id INTEGER,
+    person2_id INTEGER);
+INSERT INTO Marriage_partner (person1_id, person2_id)
+    VALUES (1, 2);
+INSERT INTO Marriage_partner (person1_id, person2_id)
+    VALUES (3, 6);
+INSERT INTO Marriage_partner (person1_id, person2_id)
+    VALUES (4, 8);
+INSERT INTO Marriage_partner (person1_id, person2_id)
+    VALUES (5, 7);
+SELECT a.fullname, a.age, c.movie_song as 'known by', b.fullname as Spouse , b.age FROM marriage_partner
+        JOIN celebrity a
+        ON marriage_partner.person1_id= a.id
+        JOIN celebrity b
+        ON marriage_partner.person2_id= b.id
+        JOIN Known_for c
+        ON marriage_partner.person1_id= c.id
+       
